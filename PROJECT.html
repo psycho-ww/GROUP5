@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="my">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Cozy Corner - Grid 4 per row</title>
+<style>
+  /* အသုံးများ */
+  :root{
+    --card-bg: #f5f5f7;
+    --panel-bg: #ffffff;
+    --accent: #2d6cdf;
+    --shadow: rgba(0,0,0,0.08);
+  }
+
+  body{
+    margin:0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial;
+    background: #fafafa;
+    color:#222;
+  }
+
+  header{
+    background: #6b3f26; /* ဓာတ်ပုံရဲ့ခေါင်း */
+    color: #fff;
+    padding: 24px 32px;
+    text-align: center;
+    font-size: 28px;
+    font-weight:700;
+  }
+
+  /* container */
+  .categories{
+    max-width:1200px;
+    margin: 28px auto;    /* header နဲ့ content အကြား vertical spacing */
+    padding: 0 20px 60px; /* အောက်ပိုင်းစာလုံးဝေး */
+  }
+
+  /* Grid: 4 columns, row gap controls vertical spacing */
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* တန်းစီ ၄ခု */
+    gap: 22px 24px; /* row-gap column-gap = vertical then horizontal spacing */
+    align-items: start;
+  }
+
+  /* card style */
+  .card{
+    background: var(--panel-bg);
+    border-radius: 12px;
+    padding: 22px 18px;
+    box-shadow: 0 6px 18px var(--shadow);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:100px;
+    text-align:center;
+    transition: transform .15s ease, box-shadow .15s ease;
+    cursor:pointer;
+  }
+  .card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  }
+
+  .icon{
+    width:44px;
+    height:44px;
+    margin-bottom:10px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    color: var(--accent);
+    /* icon background pill if needed */
+  }
+
+  .label{
+    font-size:16px;
+    font-weight:600;
+    color:#2b2b2b;
+  }
+
+  /* Responsive: smaller screens -> 2 or 1 column */
+  @media (max-width: 1000px){
+    .grid{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 520px){
+    .grid{ grid-template-columns: 1fr; }
+    .card{ padding:18px; }
+  }
+</style>
+</head>
+<body>
+
+<header>📚Cozy Corner Library Book Categories</header>
+
+<section class="categories">
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🎓</div>
+      <div class="label"><a href="Academic.html">Academic</a></div>
+    </div>
+
+    <div class="card">
+      <div class="icon">💡</div>
+      <div class="label"><a href="General knowledge.html"> General Knowledge</a></div>
+    </div>
+
+    <div class="card">
+      <div class="icon">⚗️</div>
+      <div class="label"><a href="Science.html"> Science</a></div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🈂️</div>
+      <div class="label"><a href="Language.html"> Language</a></div>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎧🎙️</div>
+      <div class="label"><a href=""> Audio Books</a></div>
+    </div>
+
+    <div class="card">
+      <div class="icon">📘</div>
+      <div class="label"><a href="collection of fiction.html"> Fiction</a></div>
+    </div>
+
+    <div class="card">
+      <div class="icon">📙</div>
+      <div class="label"><a href="collection of non-fiction.html">Non-fiction</a></div>
+    </div>
+
+    <div class="card">
+      <div class="icon">📰</div>
+      <div class="label"><a href="Magazine.html"> Magazine</a></div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
